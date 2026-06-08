@@ -13,7 +13,7 @@ const STYLES = `
   --bg:#0B0B0B;
   --bg-2:#0f0f0f;
   --fg:#FFFFFF;
-  --accent:#0000FF;
+  --accent:#C6FF00;
   --muted:#8E8E8E;
   --line:rgba(255,255,255,.08);
   --line-2:rgba(255,255,255,.04);
@@ -51,7 +51,7 @@ const STYLES = `
   70%{transform:translate(6%,2%)}90%{transform:translate(-2%,6%)}
 }
 .glow{position:fixed;pointer-events:none;z-index:0;border-radius:50%;filter:blur(120px);opacity:.5}
-.glow-a{top:-180px;right:-120px;width:520px;height:520px;background:radial-gradient(circle,rgba(0,0,255,.18),transparent 70%)}
+.glow-a{top:-180px;right:-120px;width:520px;height:520px;background:radial-gradient(circle,rgba(198,255,0,.18),transparent 70%)}
 .glow-b{bottom:10%;left:-160px;width:480px;height:480px;background:radial-gradient(circle,rgba(255,255,255,.05),transparent 70%)}
 
 /* ---------- layout ---------- */
@@ -87,7 +87,7 @@ section{position:relative;z-index:1}
   align-items:center;gap:8px;text-decoration:none;white-space:nowrap;
 }
 .btn-accent{background:var(--accent);color:#0B0B0B}
-.btn-accent:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(0,0,255,.25)}
+.btn-accent:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(198,255,0,.25)}
 .btn-ghost{background:transparent;color:var(--fg);border:1px solid var(--line)}
 .btn-ghost:hover{border-color:var(--fg);background:rgba(255,255,255,.04)}
 .btn svg{width:16px;height:16px}
@@ -109,9 +109,9 @@ section{position:relative;z-index:1}
 .orb{
   width:260px;height:260px;border-radius:50%;position:relative;
   background:
-    radial-gradient(circle at 32% 28%,rgba(0,0,255,.9),rgba(0,0,255,.1) 45%,transparent 60%),
+    radial-gradient(circle at 32% 28%,rgba(198,255,0,.9),rgba(198,255,0,.1) 45%,transparent 60%),
     conic-gradient(from 210deg,#1a1a1a,#0b0b0b,#222,#0b0b0b);
-  box-shadow:inset -30px -30px 60px rgba(0,0,0,.7),inset 14px 14px 40px rgba(255,255,255,.06),0 30px 80px rgba(0,0,0,.6),0 0 70px rgba(0,0,255,.12);
+  box-shadow:inset -30px -30px 60px rgba(0,0,0,.7),inset 14px 14px 40px rgba(255,255,255,.06),0 30px 80px rgba(0,0,0,.6),0 0 70px rgba(198,255,0,.12);
   animation:float 7s ease-in-out infinite;
 }
 .orb::after{
@@ -120,7 +120,7 @@ section{position:relative;z-index:1}
 }
 .orb::before{
   content:"";position:absolute;inset:18px;border-radius:50%;
-  background:conic-gradient(from 0deg,transparent,rgba(0,0,255,.35),transparent 40%);
+  background:conic-gradient(from 0deg,transparent,rgba(198,255,0,.35),transparent 40%);
   mix-blend-mode:screen;animation:spin 9s linear infinite reverse;
 }
 .ring-out{
@@ -158,7 +158,7 @@ section{position:relative;z-index:1}
   border:1px solid var(--line);border-radius:18px;padding:30px;background:var(--card);
   transition:.4s var(--ease);position:relative;overflow:hidden;
 }
-.rcard:hover{border-color:rgba(0,0,255,.4);transform:translateY(-4px)}
+.rcard:hover{border-color:rgba(198,255,0,.4);transform:translateY(-4px)}
 .rcard .num{font-size:13px;font-weight:700;color:var(--accent);letter-spacing:.1em}
 .rcard h3{font-size:20px;font-weight:700;margin-top:40px;letter-spacing:-.01em}
 
@@ -168,7 +168,7 @@ section{position:relative;z-index:1}
   padding:38px 4px;border-bottom:1px solid var(--line);
   display:grid;grid-template-columns:1fr;gap:18px;transition:.4s var(--ease);cursor:default;
 }
-.svc:hover{background:linear-gradient(90deg,rgba(0,0,255,.04),transparent);padding-left:18px}
+.svc:hover{background:linear-gradient(90deg,rgba(198,255,0,.04),transparent);padding-left:18px}
 .svc-head{display:flex;align-items:flex-start;justify-content:space-between;gap:20px}
 .svc-head h3{font-size:clamp(26px,4vw,40px);font-weight:800;letter-spacing:-.03em}
 .svc-head .ix{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;flex:none;transition:.4s var(--ease)}
@@ -182,15 +182,15 @@ section{position:relative;z-index:1}
 .cmp{border:1px solid var(--line);border-radius:22px;overflow:hidden;background:var(--card)}
 .cmp-head{display:grid;grid-template-columns:1.4fr 1fr 1fr}
 .cmp-head>div{padding:22px 20px;font-size:13px;font-weight:700;letter-spacing:.04em;border-bottom:1px solid var(--line)}
-.cmp-head .c-us{background:rgba(0,0,255,.08);color:var(--accent);text-align:center}
+.cmp-head .c-us{background:rgba(198,255,0,.08);color:var(--accent);text-align:center}
 .cmp-head .c-them{color:var(--muted);text-align:center}
 .cmp-row{display:grid;grid-template-columns:1.4fr 1fr 1fr;border-bottom:1px solid var(--line-2)}
 .cmp-row:last-child{border-bottom:none}
 .cmp-row>div{padding:18px 20px;display:flex;align-items:center}
 .cmp-row .lbl{font-size:15px;font-weight:500}
 .cmp-row .mark{justify-content:center}
-.cmp-row .c-us{background:rgba(0,0,255,.04)}
-.ic-ok{width:30px;height:30px;border-radius:50%;background:rgba(0,0,255,.15);color:var(--accent);display:flex;align-items:center;justify-content:center}
+.cmp-row .c-us{background:rgba(198,255,0,.04)}
+.ic-ok{width:30px;height:30px;border-radius:50%;background:rgba(198,255,0,.15);color:var(--accent);display:flex;align-items:center;justify-content:center}
 .ic-ok svg{width:16px;height:16px}
 .ic-no{width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.04);color:var(--muted);display:flex;align-items:center;justify-content:center}
 .ic-no svg{width:15px;height:15px}
@@ -207,7 +207,7 @@ section{position:relative;z-index:1}
   border:1px solid var(--line);border-radius:22px;overflow:hidden;background:var(--bg-2);
   transition:.4s var(--ease);
 }
-.wcard:hover{border-color:rgba(0,0,255,.35);transform:translateY(-5px)}
+.wcard:hover{border-color:rgba(198,255,0,.35);transform:translateY(-5px)}
 .wcard .thumb{height:240px;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:24px}
 .wcard .thumb h3{font-size:34px;font-weight:900;letter-spacing:-.03em;position:relative;z-index:2;mix-blend-mode:difference}
 .wcard .thumb::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(11,11,11,.7),transparent)}
@@ -221,11 +221,11 @@ section{position:relative;z-index:1}
 /* ---------- testimonials ---------- */
 .tgrid{display:grid;grid-template-columns:1fr;gap:18px}
 .tcard{border:1px solid var(--line);border-radius:20px;padding:32px;background:var(--card);transition:.4s var(--ease)}
-.tcard:hover{transform:translateY(-4px);border-color:rgba(0,0,255,.3)}
+.tcard:hover{transform:translateY(-4px);border-color:rgba(198,255,0,.3)}
 .tcard .quote{font-size:19px;font-weight:500;line-height:1.45;letter-spacing:-.01em}
 .tcard .qmark{font-family:'Instrument Serif',serif;font-size:60px;line-height:.4;color:var(--accent);display:block;height:30px}
 .tcard .who{display:flex;align-items:center;gap:13px;margin-top:26px}
-.tcard .av{width:42px;height:42px;border-radius:50%;flex:none;background:linear-gradient(135deg,var(--accent),#000080)}
+.tcard .av{width:42px;height:42px;border-radius:50%;flex:none;background:linear-gradient(135deg,var(--accent),#5a7000)}
 .tcard .who .n{font-size:15px;font-weight:700}
 .tcard .who .c{font-size:13px;color:var(--muted)}
 
@@ -238,7 +238,7 @@ section{position:relative;z-index:1}
 .pstep:hover{padding-left:14px}
 .pstep:last-child{border-bottom:1px solid var(--line)}
 .pstep .pn{font-size:clamp(34px,6vw,64px);font-weight:900;line-height:.8;color:transparent;-webkit-text-stroke:1px var(--muted);transition:.4s}
-.pstep:hover .pn{-webkit-text-stroke:1px var(--accent);color:rgba(0,0,255,.06)}
+.pstep:hover .pn{-webkit-text-stroke:1px var(--accent);color:rgba(198,255,0,.06)}
 .pstep .pt{font-size:clamp(20px,3vw,28px);font-weight:800;letter-spacing:-.02em}
 .pstep .pd{color:var(--muted);font-size:15px;margin-top:6px;max-width:30em}
 
@@ -261,7 +261,7 @@ section{position:relative;z-index:1}
 .final::before{
   content:"";position:absolute;top:50%;left:50%;width:760px;height:760px;max-width:120vw;
   transform:translate(-50%,-50%);border-radius:50%;
-  background:radial-gradient(circle,rgba(0,0,255,.14),transparent 65%);filter:blur(40px);
+  background:radial-gradient(circle,rgba(198,255,0,.14),transparent 65%);filter:blur(40px);
 }
 .final h2{font-weight:800;letter-spacing:-.035em;line-height:1;font-size:clamp(38px,8vw,88px);position:relative}
 .final h2 .serif{font-weight:400}
@@ -296,11 +296,11 @@ section{position:relative;z-index:1}
   border:1px solid var(--line);border-radius:22px;padding:36px 28px;background:var(--card);
   transition:.4s var(--ease);position:relative;display:flex;flex-direction:column;
 }
-.pcard:hover{transform:translateY(-4px);border-color:rgba(0,0,255,.35)}
+.pcard:hover{transform:translateY(-4px);border-color:rgba(198,255,0,.35)}
 .pcard.featured{
-  border-color:rgba(0,0,255,.55);
-  background:linear-gradient(180deg,rgba(0,0,255,.06),rgba(0,0,255,.02));
-  box-shadow:0 30px 80px rgba(0,0,0,.4),0 0 50px rgba(0,0,255,.12);
+  border-color:rgba(198,255,0,.55);
+  background:linear-gradient(180deg,rgba(198,255,0,.06),rgba(198,255,0,.02));
+  box-shadow:0 30px 80px rgba(0,0,0,.4),0 0 50px rgba(198,255,0,.12);
 }
 .pcard .pbadge{
   position:absolute;top:-14px;left:50%;transform:translateX(-50%);
@@ -360,10 +360,10 @@ const compRows = [
 ];
 
 const work = [
-  { n: "SINERGIA", g: "linear-gradient(135deg,#0000ff,#000080)", c: "Una marca corporativa sin un rumbo visual claro.", s: "Identidad modular y sistema gráfico escalable.", o: "Una percepción de marca seria y consolidada." },
+  { n: "SINERGIA", g: "linear-gradient(135deg,#c6ff00,#5a7000)", c: "Una marca corporativa sin un rumbo visual claro.", s: "Identidad modular y sistema gráfico escalable.", o: "Una percepción de marca seria y consolidada." },
   { n: "PRODENT", g: "linear-gradient(135deg,#e8e8e8,#2a2a2a)", c: "No transmitía confianza ni profesionalismo.", s: "Rebranding completo y lenguaje visual cálido.", o: "Más consultas y reconocimiento local." },
-  { n: "TCE EXPERIENCE", g: "linear-gradient(135deg,#0000ff,#0b0b0b 70%)", c: "Un evento sin una identidad memorable.", s: "Branding del evento + sistema de piezas para redes.", o: "Comunidad activa y entradas agotadas." },
-  { n: "DNZS", g: "linear-gradient(135deg,#3a3a3a,#0000ff)", c: "Un proyecto creativo buscando estética propia.", s: "Dirección de arte audaz, identidad sport-luxury.", o: "Una marca imposible de ignorar." },
+  { n: "TCE EXPERIENCE", g: "linear-gradient(135deg,#c6ff00,#0b0b0b 70%)", c: "Un evento sin una identidad memorable.", s: "Branding del evento + sistema de piezas para redes.", o: "Comunidad activa y entradas agotadas." },
+  { n: "DNZS", g: "linear-gradient(135deg,#3a3a3a,#c6ff00)", c: "Un proyecto creativo buscando estética propia.", s: "Dirección de arte audaz, identidad sport-luxury.", o: "Una marca imposible de ignorar." },
 ];
 
 const testimonials = [
