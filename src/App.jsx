@@ -285,6 +285,42 @@ section{position:relative;z-index:1}
 }
 .sticky-cta svg{width:17px;height:17px}
 
+/* ---------- pricing ---------- */
+.pricing-head{max-width:760px;margin:0 auto 54px;text-align:center}
+.pricing-head .eyebrow{justify-content:center}
+.pricing-head h2{font-weight:800;letter-spacing:-.03em;line-height:1.02;font-size:clamp(30px,5.2vw,58px);margin:18px 0 0}
+.pricing-head h2 .serif{font-weight:400}
+.pricing-head .pintro{color:var(--muted);font-size:15px;margin-top:18px;max-width:42em;margin-left:auto;margin-right:auto;line-height:1.6}
+.pricing{display:grid;grid-template-columns:1fr;gap:22px}
+.pcard{
+  border:1px solid var(--line);border-radius:22px;padding:36px 28px;background:var(--card);
+  transition:.4s var(--ease);position:relative;display:flex;flex-direction:column;
+}
+.pcard:hover{transform:translateY(-4px);border-color:rgba(0,0,255,.35)}
+.pcard.featured{
+  border-color:rgba(0,0,255,.55);
+  background:linear-gradient(180deg,rgba(0,0,255,.06),rgba(0,0,255,.02));
+  box-shadow:0 30px 80px rgba(0,0,0,.4),0 0 50px rgba(0,0,255,.12);
+}
+.pcard .pbadge{
+  position:absolute;top:-14px;left:50%;transform:translateX(-50%);
+  background:var(--accent);color:#FFFFFF;font-size:11px;font-weight:700;letter-spacing:.22em;
+  padding:8px 18px;border-radius:100px;text-transform:uppercase;white-space:nowrap;
+}
+.pcard .ptype{font-size:12px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--muted)}
+.pcard .pold{font-size:18px;font-weight:600;color:var(--muted);text-decoration:line-through;margin-top:24px;display:block}
+.pcard .pprice{font-size:clamp(40px,6vw,58px);font-weight:900;letter-spacing:-.03em;line-height:1;margin-top:6px}
+.pcard .pprice.custom{font-size:clamp(32px,5vw,46px)}
+.pcard .pdesc{color:var(--muted);font-size:15px;line-height:1.55;margin-top:22px}
+.pcard ul{list-style:none;padding:0;margin:28px 0;display:flex;flex-direction:column;gap:14px}
+.pcard li{display:flex;align-items:flex-start;gap:12px;font-size:14px;line-height:1.45;color:var(--fg)}
+.pcard li .ic-ok{width:22px;height:22px;flex:none;margin-top:1px}
+.pcard li .ic-ok svg{width:12px;height:12px}
+.pcard .btn{width:100%;justify-content:center;margin-top:auto;padding:15px 22px}
+.pricing-foot{text-align:center;margin-top:42px;color:var(--muted);font-size:14px}
+.pricing-foot a{color:var(--accent);text-decoration:none;font-weight:600}
+.pricing-foot a:hover{text-decoration:underline}
+
 /* ---------- responsive ---------- */
 @media(min-width:680px){
   .cards-3{grid-template-columns:repeat(3,1fr)}
@@ -300,6 +336,7 @@ section{position:relative;z-index:1}
   .orb{width:300px;height:300px}
   .ring-out{width:400px;height:400px}
   .reality-wrap{display:block}
+  .pricing{grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
   .sticky-cta{display:none}
   .pstep{grid-template-columns:140px 1fr;gap:40px}
   .wcard{flex-basis:30%}
@@ -333,6 +370,57 @@ const testimonials = [
   { q: "Trabajar con AXEL RAIA cambió por completo cómo nos perciben nuestros clientes.", n: "Martina López", c: "Fundadora · SINERGIA" },
   { q: "Pasamos de parecer chicos a parecer una marca líder en el rubro.", n: "Diego Fernández", c: "CEO · PRODENT" },
   { q: "Entendieron la visión desde el primer día. Diseño con estrategia real.", n: "Carla Giménez", c: "Directora · TCE EXPERIENCE" },
+];
+
+const plans = [
+  {
+    n: "Landing Page",
+    p: "400",
+    pOld: "550",
+    d: "Ideal para negocios que necesitan presencia online profesional y rápida.",
+    f: [
+      "Diseño moderno y responsive",
+      "Optimización SEO básica",
+      "Formulario de contacto",
+      "Integración WhatsApp",
+      "Entrega en 7 días hábiles",
+      "Dominio y hosting por 1 año",
+    ],
+    cta: "Quiero mi Landing",
+    featured: false,
+  },
+  {
+    n: "Sitio a medida",
+    p: "600",
+    pOld: "800",
+    d: "Para negocios que quieren destacar con un sitio completo y diferenciador.",
+    f: [
+      "Todo lo del plan Landing",
+      "Múltiples secciones y páginas",
+      "SEO avanzado + Google Analytics",
+      "Blog / Novedades del sector",
+      "Diseño 100% personalizado",
+      "Soporte post-lanzamiento",
+    ],
+    cta: "Quiero mi Sitio",
+    featured: true,
+  },
+  {
+    n: "Desarrollo a medida",
+    p: null,
+    pCustom: "Consultar",
+    d: "Para empresas y proyectos que requieren soluciones digitales complejas y personalizadas.",
+    f: [
+      "Aplicaciones web a medida",
+      "Integraciones con sistemas existentes",
+      "Panel de administración personalizado",
+      "Automatizaciones y flujos de trabajo",
+      "Arquitectura escalable y segura",
+      "Soporte técnico continuo",
+    ],
+    cta: "Quiero desarrollar a medida",
+    featured: false,
+  },
 ];
 
 const steps = [
@@ -399,6 +487,7 @@ export default function App() {
         <div className="nav-links">
           <a href="#servicios">Servicios</a>
           <a href="#trabajo">Trabajo</a>
+          <a href="#planes">Planes</a>
           <a href="#proceso">Proceso</a>
           <a href="#faq">FAQ</a>
         </div>
@@ -600,6 +689,58 @@ export default function App() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <div className="divider" />
+
+      {/* PRICING */}
+      <section className="s-pad" id="planes">
+        <div className="wrap">
+          <div className="pricing-head reveal">
+            <span className="eyebrow">Inversión</span>
+            <h2>
+              Planes claros, <br />
+              <span className="serif accent">sin sorpresas</span>.
+            </h2>
+            <p className="pintro">
+              Pago en 2 partes: 50% al inicio, 50% al entregar. Precios con descuento por lanzamiento.
+            </p>
+          </div>
+          <div className="pricing">
+            {plans.map((pl, i) => (
+              <article
+                className={`pcard reveal ${pl.featured ? "featured" : ""}`}
+                style={{ "--d": `${i * 0.06}s` }}
+                key={pl.n}
+              >
+                {pl.featured && <span className="pbadge">Más elegido</span>}
+                <span className="ptype">{pl.n}</span>
+                {pl.pOld && <span className="pold">USD {pl.pOld}</span>}
+                <div className={`pprice ${pl.pCustom ? "custom" : ""}`}>
+                  {pl.p ? `USD ${pl.p}` : pl.pCustom}
+                </div>
+                <p className="pdesc">{pl.d}</p>
+                <ul>
+                  {pl.f.map((feat) => (
+                    <li key={feat}>
+                      <span className="ic-ok">
+                        <Check />
+                      </span>
+                      {feat}
+                    </li>
+                  ))}
+                </ul>
+                <a href="#contacto" className={`btn ${pl.featured ? "btn-accent" : "btn-ghost"}`}>
+                  {pl.cta}
+                </a>
+              </article>
+            ))}
+          </div>
+          <p className="pricing-foot reveal">
+            ¿Tenés un proyecto especial?{" "}
+            <a href="#contacto">Podemos armar un presupuesto personalizado.</a>
+          </p>
         </div>
       </section>
 
