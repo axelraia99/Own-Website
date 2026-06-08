@@ -93,7 +93,7 @@ section{position:relative;z-index:1}
 .btn svg{width:16px;height:16px}
 
 /* ---------- hero ---------- */
-.hero{padding:160px 0 90px;position:relative}
+.hero{padding:160px 0 90px;position:relative;text-transform:uppercase}
 .hero-grid{display:grid;grid-template-columns:1fr;gap:50px;align-items:center}
 .hero h1{
   font-weight:800;line-height:.96;letter-spacing:-.035em;
