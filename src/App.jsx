@@ -299,7 +299,7 @@ section{position:relative;z-index:1}
   .orb-stage{height:440px}
   .orb{width:300px;height:300px}
   .ring-out{width:400px;height:400px}
-  .reality-wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+  .reality-wrap{display:block}
   .sticky-cta{display:none}
   .pstep{grid-template-columns:140px 1fr;gap:40px}
   .wcard{flex-basis:30%}
